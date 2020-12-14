@@ -17,7 +17,7 @@ module Api
       #       users are expecting numeric response now
       return rate.value.to_f if rate
 
-      value = FixerService.call(date: date, base: base, target: target)
+      value = Fixer::RateService.call(date: date, base: base, target: target)
       return unless value.present?
 
       # TODO: move to background job to provide a faster response

@@ -19,7 +19,7 @@ RSpec.describe 'Api::Rates', type: :request do
       context 'when no cache exists' do
         let(:expected_body) { { success: true, rates: { 'USD' => value } }.stringify_keys.to_json }
         let(:expected_url) do
-          "http://data.fixer.io/api/#{date}?access_key=#{FixerService::ACCESS_KEY}&symbols=#{target}"
+          "http://data.fixer.io/api/#{date}?access_key=#{FIXER_ACCESS_KEY}&symbols=#{target}"
         end
 
         before do
